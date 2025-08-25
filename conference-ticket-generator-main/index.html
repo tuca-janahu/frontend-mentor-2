@@ -16,27 +16,40 @@
 </head>
 <body>
 
-  <!-- Form starts -->
+  <form action="envio.html">
 
-  Your Journey to Coding Conf 2025 Starts Here!
+  <div class="titulo">Coding Conf</div>
+  <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
 
-  Secure your spot at next year's biggest coding conference.
+  <p>Secure your spot at next year's biggest coding conference.</p>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+  <div class="item">
+  <label for="avatar">Upload Avatar</label>
+  <input type="file" name="avatar" accept="image/png, image/jpeg" placeholder="Drag & drop or click to upload" required>
 
-  Full Name
+  <div class="aviso">Upload your photo (JPG or PNG, max size: 500KB).</div>
+  </div>
+  
+  <div class="item">
+    <label for="nome">Full Name</label>
+    <input type="text" name="nome">
+  </div>
 
-  Email Address
-  example@email.com
+  <div class="item">
+    <label for="email">Email address</label>
+    <input type="email" name="email" placeholder="example@email.com" required>
+  </div>
 
-  GitHub Username
-  @yourusername
+  <div class="item">
+    <label for="github">GitHub Username</label>
+    <input type="text" name="github" placeholder="@yourusername" required>
+  </div>
 
-  Generate My Ticket
+  <button type="submit">Generate My Ticket</button>
 
-  <!-- Form ends -->
+
+
+ </form>
 
   <!-- Generated tickets starts -->
 
