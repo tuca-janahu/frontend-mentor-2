@@ -1,0 +1,88 @@
+.pattern-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.pattern-circle {
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    width: 20%;
+    opacity: 0.5;
+    pointer-events: none;
+    overflow-y: hidden;
+}
+
+.pattern-circle2 {
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    width: 16%;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.pattern-squiggly-top {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 30%;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.pattern-squiggly-b-desk {
+    display: block;
+    margin: 0; /* centralizado com espaço acima */
+    width: auto;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.pattern-squiggly-b-mob {
+    display: none;
+}
+
+.logo-full {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .pattern-squiggly-b-desk {
+        display: none;
+        max-width: 0;
+    }
+
+    .pattern-squiggly-b-mob {
+        display: block;
+        margin: 0;
+        width: auto;
+        opacity: 0.5;
+        pointer-events: none;
+        max-width: 100%;   /* nunca ultrapassa a largura da tela */
+
+    }
+
+    .pattern-circle, .pattern-circle2 {
+        width: 40%;
+        opacity: 0.5;
+    }
+
+    .pattern-squiggly-top {
+        width: 50%;
+
+    }
+
+    .pattern-lines {
+        width: auto;
+        overflow-x: hidden;
+    }
+}

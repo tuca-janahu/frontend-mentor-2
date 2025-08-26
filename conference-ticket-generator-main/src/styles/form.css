@@ -1,0 +1,151 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 3% auto;
+    min-height: 60vh;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+form h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+form p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+form .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 1.2em;
+    margin-bottom: 3%;
+    align-self: flex-start;
+}
+
+form .item  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5% auto;
+}
+
+form .item label {
+    font-size: 1.1em;
+}
+
+form .item input[type="file"]{
+    height: 10rem;
+    margin-bottom: 12px;
+    border: 2px dashed #ffffff30;
+}
+
+.aviso {
+    display: flex;
+    font-size: 0.9em;
+    color: var(--neutral-0);
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.aviso img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+form .item input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #ffffff10;
+    border: 1px solid #ffffff30;
+    color: var(--neutral-0)
+}
+
+form .item input:focus {
+    border: 1px double var(--neutral-500);
+}
+
+form .item input:hover {
+    border: 1.5px solid var(--orange-500);
+    background-color: #ffffff20;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+form .item input:-webkit-autofill,
+form .item input:-webkit-autofill:focus,
+form .item input:-webkit-autofill:hover,
+form .item input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff10 inset !important;
+    box-shadow: 0 0 0 1000px #ffffff10 inset !important;
+    -webkit-text-fill-color: var(--neutral-0) !important;
+    color: var(--neutral-0) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.avisoGitHub, .avisoAvatar {
+    color: #ff8080;
+    font-size: 0.95em;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 96%;
+    transition: all 0.2s;
+    min-height: 0;
+    visibility: hidden;
+}
+
+.avisoGitHub.active, .avisoAvatar.active {
+    background: rgba(116, 15, 15, 0.367);
+    visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    form h1 {
+        font-size: 2.5rem;
+    }
+
+    form p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        width: 90%;
+        padding: 5px;
+    }
+
+    form h1 {
+        font-size: 1.5rem;
+    }
+
+    form p {
+        font-size: 0.9em;
+    }
+    
+}

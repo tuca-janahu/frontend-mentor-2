@@ -1,44 +1,39 @@
+@import url(../styles/patterns.css);
+@import url(../styles/form.css);
+
+
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+
+    --gradient-text: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* bloqueia scroll lateral */
+}
+
 body {
     background: url('../../assets/images/background-desktop.png') no-repeat center top;
     background-size: cover;
     font-family: inconsolata, monospace;
     color: #fff;
     position: relative;
-    overflow: hidden;
-}
-
-.pattern-circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 220px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.pattern-squiggly {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    width: 450px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    gap: 20px;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
 button {
-    background-color: #ff6f61;
+    background-color: var(--orange-700);
+    width: 100%;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -48,6 +43,33 @@ button {
     transition: background-color 0.3s ease;
 }
 
+img .logo-full{
+    margin: 15%;
+}
+
+
 button:hover {
-    background-color: #ff3b2e;
+    background-color: var(--orange-500);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: url('../../assets/images/background-tablet.png') no-repeat center top;
+        background-size: cover;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background: url('../../assets/images/background-mobile.png') no-repeat center top;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+    button {
+        margin-top: 2%;
+    }
+    
 }
