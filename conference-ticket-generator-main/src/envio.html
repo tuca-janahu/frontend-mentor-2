@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Congrats, <span id="nome"></span>! Your ticket is ready.</h1>
+    <h1>Congrats, <span class="validado" id="nome-validado"></span>! Your ticket is ready.</h1>
 
-   <h2>We've emailed your ticket to <span id="email"></span> and will send updates in the run up to the event.</h2> 
+   <h2>We've emailed your ticket to <span class="validado" id="email-validado"></span> and will send updates in the run up to the event.</h2> 
     Coding Conf
     Jan 31, 2025 / Austin, TX
 
-
-</body>
 <script src="../src/scripts.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("nome-validado").textContent = params.get("nome");
+  document.getElementById("email-validado").textContent = params.get("email");
+</script>
+</body>
 </html>

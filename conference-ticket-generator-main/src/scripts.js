@@ -62,10 +62,39 @@ function validarAvatar () {
     }});
 }
 
+function dadosDinamicos (){
+  const nomeInput = document.getElementById("nome");
+  const emailInput = document.getElementById("email");
 
+  const nomeValidado = document.getElementById("nome-validado");
+  const emailValidado = document.getElementById("email-validado");
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
+
+    const nome = nomeInput.value.trim();
+    const email = emailInput.value.trim();
+
+    // Atualiza os elementos na página de envio
+    nomeValidado.textContent = nome;
+    emailValidado.textContent = email;
+
+    // Redireciona para a página de envio
+    window.location.href = "envio.html";
+  });
+}
+
+function dadosDinamicos(){
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("nome-validado").textContent = params.get("nome");
+  document.getElementById("email-validado").textContent = params.get("email");
+}
 // garante que o DOM esteja carregado
 document.addEventListener("DOMContentLoaded", function () {
   correcaoGitHub();
   //validacaoGithub();
   validarAvatar();
+  dadosDinamicos();
 });
