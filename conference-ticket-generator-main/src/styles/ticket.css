@@ -1,0 +1,76 @@
+.ticket-area {
+  margin: 50px auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 10%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-area h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.ticket-area h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  margin: auto;
+  width: 50%;
+}
+
+.ticket {
+  position: relative;
+  width: min(90vw, 700px); 
+  aspect-ratio: 16 / 7; 
+  background: url("../../assets/images/pattern-ticket.svg") no-repeat center /
+    contain;
+  margin-inline: auto;
+  margin-block: clamp(16px, 6vh, 56px);
+}
+
+.ticket .logo-full {
+  position: absolute;
+  top: 10%; 
+  left: 8%; 
+  width: 40%;
+  display: block;
+}
+
+.id-ticket {
+  position: absolute;
+  right: 5%; /* distância da borda direita */
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.ticket p {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ticket span {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  font-size: 1.5rem;
+  color: var(--neutral-0);
+  font-weight: bold;
+}
+
+.validado {
+  background: var(--gradient-text);
+  color: transparent; /* bom fallback geral */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* necessário p/ Safari/Chrome */
+  -webkit-font-smoothing: antialiased;
+}
