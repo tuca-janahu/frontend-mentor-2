@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
-    <title>Document</title>
+    <title>Seu Ticket | Conf </title>
 </head>
 
 <body>
@@ -16,22 +16,32 @@
     <img src="../assets/images/pattern-lines.svg" class="pattern-lines" alt="" />
 
     <div class="ticket-area">
-        <h1>Congrats, <span class="validado" id="nome-validado"></span>! Your ticket is ready.</h1>
+        <h1>Congrats, <span class="nome-validado"></span>! Your ticket is ready.</h1>
 
         <h2>We've emailed your ticket to <span class="validado" id="email-validado"></span> and will send updates in the
             run up to the event.</h2>
 
             <div class="ticket">
-                <img src="../assets/images/logo-full.svg" class="logo-full">
-                <div class="id-ticket">0001</div>
-                <p>12 de Out, 2025 / Salvador BA</p>
-
-                <img src="" alt="">
+                <div class="data-container">
                 
-                <h3><span id="nome-validado"></span></h3>
-                <span id="github-validado"></span>
+                <img src="../assets/images/logo-full.svg" class="logo-full">
+                
+                
+                
+                <p class="data">12 de Out, 2025 / Salvador BA</p>             
+                
+                <div class="ticket-info">
+                    <div class="avatar-spot"></div>
+                    <div class="ticket-names">
+                    <h3 class="nome-validado"></h3>
+                    <p id="github-validado"></p>
+                    </div>
+                </div>
+                    
+                </div>
+
+                <div class="id-ticket">#0001</div>
             </div>
-        <img id="avatar-preview" style="display:none;max-width:160px;border-radius:8px">
 
     </div>
 
@@ -48,10 +58,13 @@
     <script type="module" src="../src/scripts/scripts.js"></script>
     <script>
         const p = new URLSearchParams(location.search);
-        document.getElementById('nome-validado').textContent = p.get('nome') || '';
+
+        const nome = p.get('nome') || '';
+        document.querySelectorAll('.nome-validado').forEach(el => el.textContent = nome);
         document.getElementById('email-validado').textContent = p.get('email') || '';
         document.getElementById('github-validado').textContent = p.get('github') || '';
     </script>
+
 
 </body>
 

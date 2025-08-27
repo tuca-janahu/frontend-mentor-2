@@ -17,7 +17,7 @@
   <img src="../assets/images/pattern-lines.svg" class="pattern-lines" alt="" />
 
 
-  <form action="envio.html" method="get">
+  <form enctype="multipart/form-data" action="envio.html" method="get">
 
     <img src="../assets/images/logo-full.svg" class="logo-full">
     <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
@@ -27,8 +27,11 @@
     <div class="form-container">
       <div class="item">
         <label for="avatar">Upload Avatar</label>
-        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
- 
+<div class="file-field">
+        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg" placeholder="Upload your photo">
+                       <div class="avatar-spot" aria-hidden="true"></div>
+                       </div>
+
         <div class="aviso">
           <img src="../assets/images/icon-info.svg" class="info">
 
@@ -39,17 +42,17 @@
 
       <div class="item">
         <label for="nome">Full Name</label>
-        <input type="text" name="nome" id="nome" >
+        <input type="text" name="nome" id="nome">
       </div>
 
       <div class="item">
         <label for="email">Email address</label>
-        <input type="email" name="email" id="email" placeholder="example@email.com" >
+        <input type="email" name="email" id="email" placeholder="example@email.com">
       </div>
 
       <div class="item">
         <label for="github">GitHub Username</label>
-        <input type="text" name="github" id="github" placeholder="@yourusername" >
+        <input type="text" name="github" id="github" placeholder="@yourusername">
         <div class="avisoGitHub"></div>
       </div>
 
@@ -69,6 +72,10 @@
   </div>
 
   <script type="module" src="../src/scripts/scripts.js"></script>
+
+  <script>
+
+  </script>
 </body>
 
 
