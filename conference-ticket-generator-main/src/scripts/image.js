@@ -1,50 +1,51 @@
 export function imageInput() {
   const avatarImage = document.getElementById("avatar");
-  const avatarSpot = document.querySelector(".avatar-spot");
+  const avatarSpot  = document.querySelector(".file-field .avatar-spot");
+  const actions     = document.querySelector(".file-field .avatar-actions");
+  const btnChange   = actions?.querySelector(".btn-change");
+  const btnRemove   = actions?.querySelector(".btn-remove");
 
   if (!avatarImage || !avatarSpot) return;
 
-	avatarSpot.replaceChildren();
-	sessionStorage.removeItem("avatarDataURL");
+  avatarSpot.replaceChildren();
+  actions && (actions.hidden = true);
+  sessionStorage.removeItem("avatarDataURL");
 
-  avatarImage.addEventListener("change", (event) => {
+  avatarImage.addEventListener("change", () => {
     const file = avatarImage.files && avatarImage.files[0];
-
-    if (!file) {
-        console.log("Nenhum arquivo selecionado");
-      avatarSpot.classList.add("inactive");
-      sessionStorage.removeItem("avatarDataURL");
-      return;
-    }
-
-    const preview = avatarSpot.querySelector("#avatar-preview");
-    if (preview) preview.remove();
+    if (!file) { clearPreview(); return; }
 
     const reader = new FileReader();
-    reader.onload = function (e) {
-      console.log("Arquivo carregado");
-
-      const previewImage = document.createElement("img");
-
-      previewImage.width = 100;
-      previewImage.height = 100;
-      previewImage.id = "avatar-preview";
-      previewImage.src = e.target.result;
-
-
-			
-			const dataURL = e.target.result; 
-      sessionStorage.setItem("avatarDataURL", dataURL); 
-      previewImage.src = dataURL;
-
-      avatarSpot.replaceChildren(previewImage);
-
-
+    reader.onload = (e) => {
+      const dataURL = e.target.result;
+      const img = document.createElement("img");
+      img.id = "avatar-preview";
+      img.src = dataURL;           // tamanho controlado no CSS (100x100)
+      avatarSpot.replaceChildren(img);
+      actions && (actions.hidden = false);       // mostra botões
+      sessionStorage.setItem("avatarDataURL", dataURL);
     };
-
     reader.readAsDataURL(file);
   });
+
+  // ações
+  btnChange && btnChange.addEventListener("click", (ev) => {
+    ev.stopPropagation();
+    avatarImage.click();
+  });
+  btnRemove && btnRemove.addEventListener("click", (ev) => {
+    ev.stopPropagation();
+    clearPreview();
+  });
+
+  function clearPreview(){
+    avatarImage.value = "";
+    avatarSpot.replaceChildren();          // volta ao :empty (mostra ícone + texto)
+    actions && (actions.hidden = true);
+    sessionStorage.removeItem("avatarDataURL");
+  }
 }
+
 
 export function loadAvatarFromSession() {
 	console.log("Tentando carregar avatar da sessão");

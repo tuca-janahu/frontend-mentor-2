@@ -3,7 +3,7 @@
   width: 100%;
   height: 100%;
   max-width: 520px;     /* ajuste ao seu layout */
-  height: 160px;
+  height: 260px;
   margin-bottom: 2%;
   border: 2px dashed #ffffff33;
   border-radius: 12px;
@@ -16,8 +16,7 @@
   transition: 0.2s ease;
 
 }
-/* o input cobre toda a área: clica e aceita drag & drop */
-/* input ocupa toda a área (para clique/drag&drop) */
+
 .file-field input[type="file"]{
   position: absolute;
   inset: 0;
@@ -34,7 +33,7 @@
 .file-field .avatar-spot{
   position: absolute;
   inset: 0;
-  margin:auto;
+  margin: 40px auto ;
   z-index: 1;
   display: grid;
   place-items: center;        /* centraliza o conteúdo */
@@ -42,13 +41,6 @@
   background: #ffffff0a;
   overflow: hidden;
 }
-
-
-.avatar-preview{
-  width: 100px;
-  height: 100px;
-}
-
 
  .file-field .avatar-spot img{
   object-fit: cover;             
@@ -70,14 +62,59 @@
 }
 
 .file-field .avatar-spot:empty::after{
-  content: "";
-  color: #fff;
-  opacity: .7;
-  font-size: 1rem;
-  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 44px);
+  transform: translateX(-50%);
+  color: #fff; opacity: .75;
+  font-size: 0.95rem; line-height: 1.2;
+  text-align: center; padding: 0 12px;
 }
 
+.file-field .avatar-help{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 38px); /* fica logo abaixo do ícone/quadrado */
+  margin: 0;
+  color: #fff; opacity: .75;
+  font-size: 0.95rem; line-height: 1.2;
+  text-align: center;
+  z-index: 1;           /* abaixo do input (z-index:2), mas visível */
+  pointer-events: none; /* clique passa para o input */
+}
 
+.file-field .avatar-spot:not(:empty) ~ .avatar-help { display: none; }
 
-/* feedback visual (opcional) */
-.file-field:focus-within .avatar-spot{ outline: 2px solid #ffffff66; outline-offset: 2px; }
+/* some placeholder com imagem */
+.file-field .avatar-spot:not(:empty)::before,
+.file-field .avatar-spot:not(:empty)::after{ content: none; }
+
+/* botões: centralizados e DENTRO do file-field */
+.file-field .avatar-actions{
+  position: absolute;
+  left: 50%;
+  bottom: 10%;                 /* fica dentro do contêiner */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;                   /* acima do input (que está com z-index:2) */
+}
+.file-field .avatar-actions[hidden]{ display: none !important; }
+
+.file-field .avatar-actions button{
+  appearance: none;
+  border: none;
+  background: var(--orange-500);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.file-field .avatar-actions button:hover{ 
+  background-color: #ffffff30;
+
+}
