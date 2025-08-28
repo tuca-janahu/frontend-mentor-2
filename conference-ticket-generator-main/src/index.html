@@ -28,21 +28,27 @@
       <div class="item">
         <label for="avatar">Upload Avatar</label>
 <div class="file-field">
-        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg" placeholder="Upload your photo">
-                       <div class="avatar-spot" aria-hidden="true"></div>
-                       </div>
+  <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
+  <div class="avatar-spot" aria-live="polite"></div>
+  <div class="avatar-actions" hidden>
+    <button type="button" class="btn-change">Alterar foto</button>
+    <button type="button" class="btn-remove">Excluir</button>
+  </div>
+</div>
 
-        <div class="aviso">
+        <div class="info-text">
           <img src="../assets/images/icon-info.svg" class="info">
 
           Upload your photo (JPG or PNG, max size: 500KB).
         </div>
-        <div class="avisoAvatar"></div>
+        <div class="aviso" id="avisoAvatar"></div>
       </div>
 
       <div class="item">
         <label for="nome">Full Name</label>
         <input type="text" name="nome" id="nome">
+        <div class="aviso" id="avisoNome"></div>
+
       </div>
 
       <div class="item">
@@ -53,7 +59,7 @@
       <div class="item">
         <label for="github">GitHub Username</label>
         <input type="text" name="github" id="github" placeholder="@yourusername">
-        <div class="avisoGitHub"></div>
+        <div class="aviso" id="avisoGitHub"></div>
       </div>
 
       <button type="submit">Generate My Ticket</button>

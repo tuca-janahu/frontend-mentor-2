@@ -1,7 +1,7 @@
 export function validarAvatar () {
   const avatar = document.getElementById("avatar");
   const form = document.querySelector("form");
-  const aviso = document.querySelector(".avisoAvatar");
+  const aviso = document.querySelector("#avisoAvatar");
 
   if (!avatar || !form) return;
   
@@ -39,7 +39,7 @@ export function validarAvatar () {
 export function validacaoGithub() {
   const form = document.querySelector("form");
   const github = document.getElementById("github");
-  const aviso = document.querySelector(".avisoGitHub");
+  const aviso = document.querySelector("#avisoGitHub");
 
   if (!form || !github) return;
   
@@ -58,3 +58,24 @@ export function validacaoGithub() {
   });
 }
 
+export function validarNome() {
+  const nome = document.getElementById("nome");
+  const form = document.querySelector("form");  
+  const aviso = document.querySelector("#avisoNome");
+
+  if (!nome || !form) return;
+
+  form.addEventListener("submit", function (event) {
+    const valor = nome.value.trim();
+
+    if (!valor.includes(" ")) {
+      event.preventDefault(); // cancela envio
+      aviso.textContent = "Por favor, insira seu nome completo.";
+      aviso.classList.add("active");
+      nome.focus(); // coloca o cursor de volta no campo
+    } else {
+      aviso.textContent = ""; // limpa mensagem de erro
+      aviso.classList.remove("active");
+    }
+  });
+}

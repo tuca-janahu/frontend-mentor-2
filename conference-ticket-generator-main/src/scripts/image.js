@@ -25,18 +25,21 @@ export function imageInput() {
       console.log("Arquivo carregado");
 
       const previewImage = document.createElement("img");
+
       previewImage.width = 100;
       previewImage.height = 100;
       previewImage.id = "avatar-preview";
       previewImage.src = e.target.result;
+
+
 			
 			const dataURL = e.target.result; 
       sessionStorage.setItem("avatarDataURL", dataURL); 
       previewImage.src = dataURL;
 
-      
-
       avatarSpot.replaceChildren(previewImage);
+
+
     };
 
     reader.readAsDataURL(file);

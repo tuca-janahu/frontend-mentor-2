@@ -53,7 +53,7 @@ form .item input[type="file"]{
     border: 2px dashed #ffffff30;
 }
 
-.aviso {
+.info-text {
     display: flex;
     font-size: 0.9em;
     color: var(--neutral-0);
@@ -63,7 +63,7 @@ form .item input[type="file"]{
     margin-bottom: 10px;
 }
 
-.aviso img{
+.info-text img{
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -101,22 +101,24 @@ form .item input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-.avisoGitHub, .avisoAvatar {
+.aviso {
     color: #ff8080;
     font-size: 0.95em;
     justify-content: center;
     align-items: center;
-    padding: 8px;
-    width: 96%;
     transition: all 0.2s;
     min-height: 0;
     visibility: hidden;
 }
 
-.avisoGitHub.active, .avisoAvatar.active {
+.aviso.active {
     background: rgba(116, 15, 15, 0.367);
     visibility: visible;
+    padding: 8px;
+    width: 96%;
 }
+
+
 
 
 
