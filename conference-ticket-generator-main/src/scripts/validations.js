@@ -106,7 +106,8 @@ export function validarNomeToasty() {
           color: "#fff",
           padding: "8px 16px",
           boxShadow: "0 8px 24px rgba(0,0,0,.35)",
-          position: "fixed"
+          position: "fixed",
+          zIndex: 9999
         }
       }).showToast();
 

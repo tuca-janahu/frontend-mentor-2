@@ -73,7 +73,7 @@ button:hover {
     body {
         background: url('../../assets/images/background-mobile.png') no-repeat center top;
         background-size: cover;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     button {
