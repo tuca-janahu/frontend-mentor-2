@@ -11,6 +11,8 @@ export function correcaoGitHub() {
     if (!valor.startsWith("@")) {
       event.preventDefault(); // cancela envio
       github.value = "@" + valor;
+    } else {
+      console.log("GitHub válido!");
     }
   });
 }

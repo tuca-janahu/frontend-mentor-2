@@ -14,15 +14,15 @@ export function validarAvatar () {
       aviso.classList.add("active");
       avatar.focus();
 
-      const MAX_SIZE = 500 * 1024; // 500KB
+      const MAX_SIZE = 500 * 1024; 
     
-     } else if (file.size > MAX_SIZE) { // 500KB
-      event.preventDefault(); // cancela envio
+     } else if (file.size > MAX_SIZE) { 
+      event.preventDefault();
       aviso.textContent = "O arquivo de avatar deve ser menor que 500KB.";
       aviso.classList.add("active");
-      avatar.focus(); // coloca o cursor de volta no campo
+      avatar.focus(); 
     }  else if (file.type !== "image/png" && file.type !== "image/jpeg") {
-      event.preventDefault(); // cancela envio
+      event.preventDefault(); 
       aviso.textContent = "O arquivo de avatar deve ser PNG ou JPG.";
       aviso.classList.add("active");
       avatar.focus(); // coloca o cursor de volta no campo
@@ -72,8 +72,11 @@ export function validarNome() {
       event.preventDefault(); // cancela envio
       aviso.textContent = "Por favor, insira seu nome completo.";
       aviso.classList.add("active");
+
+      // alert("Por favor, insira seu nome completo.");
       nome.focus(); // coloca o cursor de volta no campo
     } else {
+      console.log("Nome válido!");
       aviso.textContent = ""; // limpa mensagem de erro
       aviso.classList.remove("active");
     }

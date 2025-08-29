@@ -46,12 +46,12 @@ form .item  {
 form .item label {
     font-size: 1.1em;
 }
-
+/* 
 form .item input[type="file"]{
     height: 10rem;
     margin-bottom: 12px;
     border: 2px dashed #ffffff30;
-}
+} */
 
 .info-text {
     display: flex;
@@ -150,6 +150,10 @@ form .item input:-webkit-autofill:active {
 
     form p {
         font-size: 0.9em;
+    }
+
+    form .info-text{
+        font-size: 0.8em;
     }
     
 }

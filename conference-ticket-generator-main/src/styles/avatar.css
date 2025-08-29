@@ -32,16 +32,20 @@
 /* área pontilhada preenche 100% */
 .file-field .avatar-spot{
   position: absolute;
-  inset: 0;
-  margin: 40px auto ;
+  inset: 0;                  /* preenche todo o file-field */
+  width: 100%;               /* redundante, mas deixa explícito */
+  height: 100%;
+  margin: 0;                 /* <- REMOVA */
   z-index: 1;
   display: grid;
-  place-items: center;        /* centraliza o conteúdo */
-  border-radius: 16px;
+  place-items: center;       /* centraliza o quadrado da foto/ícone */
+  border-radius: 12px;
   background: #ffffff0a;
   overflow: hidden;
+  pointer-events: none;      /* clique passa para o input invisível acima */
 }
-
+/* se precisar interagir com a imagem, reabilite nela: */
+.file-field .avatar-spot img{ pointer-events: auto; }
  .file-field .avatar-spot img{
   object-fit: cover;             
   display: block;
@@ -117,4 +121,43 @@
 .file-field .avatar-actions button:hover{ 
   background-color: #ffffff30;
 
+}
+
+/* tamanho padrão do quadrado (desktop/tablet) */
+.file-field{ --avatar-size: 120px; }
+
+/* aumenta no mobile */
+@media (max-width: 480px){
+  .file-field .avatar-spot img,
+  .file-field .avatar-spot:empty::before{
+    top: calc(50% - 12px);
+  }
+  /* dá mais respiro pro dashed */
+  
+}
+
+/* aplica a variável no ícone e na imagem */
+.file-field .avatar-spot:empty::before,
+.file-field .avatar-spot img{
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+}
+
+/* garante centralização e que não expanda o dashed */
+.file-field .avatar-spot{
+  display: grid;
+  place-items: center;
+}
+.file-field .avatar-spot img{
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 2px #00000040;
+}
+
+/* se você usa o texto “Drag & Drop…” dentro do file-field */
+.file-field .avatar-help{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(var(--avatar-size)/2 + 8px)); /* ajusta a distância do texto ao quadrado */
 }
