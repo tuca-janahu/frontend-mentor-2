@@ -115,7 +115,7 @@ form .item input:-webkit-autofill:active {
     background: rgba(116, 15, 15, 0.367);
     visibility: visible;
     padding: 8px;
-    width: 96%;
+    width: 100%;
 }
 
 

@@ -2,7 +2,7 @@
 @import url(../styles/form.css);
 @import url(../styles/ticket.css);
 @import url(../styles/avatar.css);  
-
+@import url(../styles/footer.css);
 *,
 *::before,
 *::after { box-sizing: border-box; }

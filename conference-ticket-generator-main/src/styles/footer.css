@@ -1,0 +1,28 @@
+footer{
+    background-color: #00000030;
+    align-items: center;
+    justify-items: center;
+    margin: -18px;
+}
+
+footer .developer{
+    padding: 40px 20px 0px;
+}
+
+footer .copyright {
+    padding-bottom: 40px;
+}
+
+footer a{
+  background: var(--gradient-text);
+  color: transparent;
+  background-clip: text;
+  display: inline-block;                 /* permite transformar */
+  transition: transform .15s ease, filter .15s ease;
+  text-decoration: none;                 /* opcional */
+}
+
+footer a:hover{
+  transform: scale(1.1);                 /* em vez de 'scale:' */
+  filter: brightness(1.1);               /* opcional: dá um “pop” */
+}
