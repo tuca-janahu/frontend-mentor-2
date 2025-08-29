@@ -26,3 +26,15 @@ footer a:hover{
   transform: scale(1.1);                 /* em vez de 'scale:' */
   filter: brightness(1.1);               /* opcional: dá um “pop” */
 }
+
+@media screen and (max-width: 600px) {
+    footer .developer{
+        padding: 20px 10px 0px;
+        font-size: 14px;
+    }
+
+    footer .copyright {
+        padding-bottom: 20px;
+        font-size: 12px;
+    }
+}
