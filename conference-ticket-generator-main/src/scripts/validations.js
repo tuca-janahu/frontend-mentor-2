@@ -14,9 +14,8 @@ export function validarAvatar () {
       aviso.classList.add("active");
       avatar.focus();
 
-      const MAX_SIZE = 500 * 1024; 
     
-     } else if (file.size > MAX_SIZE) { 
+     } else if (file.size > (500 * 1024)) { 
       event.preventDefault();
       aviso.textContent = "O arquivo de avatar deve ser menor que 500KB.";
       aviso.classList.add("active");
@@ -69,15 +68,54 @@ export function validarNome() {
     const valor = nome.value.trim();
 
     if (!valor.includes(" ")) {
-      event.preventDefault(); // cancela envio
+      event.preventDefault();                               // aviso dentro da página
       aviso.textContent = "Por favor, insira seu nome completo.";
       aviso.classList.add("active");
 
-      // alert("Por favor, insira seu nome completo.");
+        // alert("Por favor, insira seu nome completo.");   // alerta simples
       nome.focus(); // coloca o cursor de volta no campo
     } else {
-      console.log("Nome válido!");
+      console.log("Nome e sobrenome inseridos.");
       aviso.textContent = ""; // limpa mensagem de erro
+      aviso.classList.remove("active");
+    }
+  });
+}
+
+export function validarNomeToasty() {
+  const nome  = document.getElementById("nome");
+  const form  = document.querySelector("form");
+  const aviso = document.querySelector("#avisoNome");
+  if (!nome || !form) return;
+
+  form.addEventListener("submit", (event) => {
+    const valor = nome.value.trim();
+
+    if (!valor.includes(" ")) {
+      event.preventDefault(); // não envia
+      // toast na direita
+      Toastify({
+        text: "Por favor, insira seu nome completo.",
+        duration: 3000,
+        gravity: "top",        
+        position: "left",      
+        close: false,
+        stopOnFocus: true,
+        style: {
+          background: "red",
+          color: "#fff",
+          padding: "8px 16px",
+          boxShadow: "0 8px 24px rgba(0,0,0,.35)",
+          position: "fixed"
+        }
+      }).showToast();
+
+      nome.focus();
+      return;
+    }
+
+    if (aviso) {
+      aviso.textContent = "";
       aviso.classList.remove("active");
     }
   });

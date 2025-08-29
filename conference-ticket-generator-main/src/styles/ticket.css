@@ -16,7 +16,7 @@
 .ticket-area h2 {
   font-size: 1.2rem;
   width: 50%;
-  margin: 0 auto 8px auto;
+  margin: 64px auto 8px auto;
 }
 
 /* ====== TEXTO EM GRADIENTE ====== */
@@ -184,13 +184,14 @@
     } 
 
   .ticket-area h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .ticket-area h2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
     width: 70%;
-    margin: 20% auto 6px auto;
+    margin: 30px auto 6px auto;
   }
 
   .id-ticket{

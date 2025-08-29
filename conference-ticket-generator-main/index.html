@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./src/styles/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
   <title>Coding Conf | Garanta seu Ticket</title>
 </head>
 
@@ -51,19 +53,19 @@
       <div class="item">
         <label for="nome">Nome Completo</label>
 
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" required>
         <div class="aviso" id="avisoNome"></div>
 
       </div>
 
       <div class="item">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="exemplo@email.com">
+        <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
       </div>
 
       <div class="item">
         <label for="github">GitHub</label>
-        <input type="text" name="github" id="github" placeholder="@seuusuario">
+        <input type="text" name="github" id="github" placeholder="@seuusuario" required>
         <div class="aviso" id="avisoGitHub"></div>
       </div>
 
@@ -90,7 +92,7 @@
 
 <footer>
   <p class="developer">Desenvolvido por 
-    <a href="https://www.github.com/tuca-janahu">Artur Janahú</a>
+    <a href="https://www.github.com/tuca-janahu" target="_blank">Artur Janahú</a>
   </p>
   <p class="copyright">
     &copy; 2025 - Todos os direitos reservados.

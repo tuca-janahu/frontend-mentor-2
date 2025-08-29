@@ -43,8 +43,8 @@
     width: auto;
     opacity: 0.5;
     pointer-events: none;
-      position: static; 
-  bottom: 0;
+    position: static; 
+    bottom: 0;
 }
 
 .pattern-squiggly-b-mob {

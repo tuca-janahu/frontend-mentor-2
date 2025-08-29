@@ -20,7 +20,7 @@ export function imageInput() {
       const dataURL = e.target.result;
       const img = document.createElement("img");
       img.id = "avatar-preview";
-      img.src = dataURL;           // tamanho controlado no CSS (100x100)
+      img.src = dataURL;           
       avatarSpot.replaceChildren(img);
       actions && (actions.hidden = false);       // mostra botões
       sessionStorage.setItem("avatarDataURL", dataURL);
@@ -49,7 +49,7 @@ export function imageInput() {
 
 export function loadAvatarFromSession() {
 	console.log("Tentando carregar avatar da sessão");
-	if (document.getElementById("avatar")) return; // ✅ só carrega na segunda página
+	if (document.getElementById("avatar")) return; 
 
   const spot = document.querySelector('.avatar-spot');
   if (!spot) return;
